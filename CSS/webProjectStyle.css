@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border: border-box;
+    background-color: white;
+}
+#header_bar{
+    height: 70px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    
+}
+
+#logo{
+    height: 60px;
+    width: 100px;
+    background-color: red;
+    margin: 10px;
+}
+.location{
+    background-color: red;
+    color: black;
+    margin: 10px;
+
+}
+.location-name{
+    background-color: red;
+    color: black
+}
+.nav-search{
+    display: flex;
+    margin: 20px;
+    background-color: red;
+}
+.search-input{
+    width: 500px;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+.search-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 30px;
+    height: 31px;
+    margin-top: 1px;
+}
+#noti-icon{
+    height: 30px;
+    width: 80px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-icon{
+    border-radius: 35%;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 30px;
+    background-color: lightblue;
+}
+.plus-icon{
+    margin-top: 0.8px;
+    border-radius: 50%;
+    margin-right: 1.7px;
+    font-size: 1.5rem;
+    background-color: lightblue;
+    
+
+}
+.create-write{
+    font-size: 0.9rem;
+    background-color: lightblue;
+
+}
+.signin{
+    height: 50px;
+    width: 150px;
+    border: 1px solid black;
+    margin-left: 30px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.signin-para{
+    background-color: red;
+    font-size: 15px;
+    /* height: auto; */
+    margin-left: 3px;
+    align-items: center;
+
+    
+}
