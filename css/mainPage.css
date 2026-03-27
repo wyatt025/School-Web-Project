@@ -262,7 +262,6 @@ body {
     border-radius: 12px;
 }
 .outline:hover{
-    /* background-color: blue; */
     outline: 10px solid lightblue;
     transition: 0.2s;
     border-radius: 12px; ;

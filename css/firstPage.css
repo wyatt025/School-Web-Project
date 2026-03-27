@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #141414; 
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container {
+    text-align: center;
+}
+.header-logo{
+    width: 150px; 
+    margin-right: 25px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.profile-list {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.profile {
+    cursor: pointer;
+    text-align: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 3px solid transparent;
+    transition: border 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.kids {
+    background: orangered;
+}
+
+.kids-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.add-profile {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus-icon {
+    font-size: 5rem;
+    color: grey;
+}
+
+.profile-name {
+    color: grey;
+    font-size: 1.2rem;
+}
+
+.profile:hover .avatar {
+    border-color: white;
+}
+
+.profile:hover .profile-name {
+    color: white;
+}
+
+.profile:hover .plus-icon {
+    background-color: white;
+    color: #141414;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manage-btn {
+    background: transparent;
+    border: 1px solid grey;
+    color: grey;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.manage-btn:hover {
+    border-color: white;
+    color: black;
+    border: 3px solid lightblue;
+    background-color: lightcoral;
+}
