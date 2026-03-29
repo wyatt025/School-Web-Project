@@ -35,8 +35,6 @@ body {
 
 }
 
-
-.yt-logo { width: 90px; }
 .country-code { font-size: 10px; color: #aaa; margin-top: -10px; }
 
 .header-center {
@@ -316,3 +314,6 @@ a{
     align-items: center;
 }
 
+.vidzä-logo { 
+  width: 120px; 
+}

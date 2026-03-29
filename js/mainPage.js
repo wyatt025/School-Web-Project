@@ -47,3 +47,9 @@ chipsBox.onscroll = function() {
         rightBtn.style.display = "flex";
     }
 };
+
+const url = "../html/videoPage.html";
+
+document.querySelectorAll(".video-link").forEach(link => {
+    link.href = url;
+  });
