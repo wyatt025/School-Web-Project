@@ -1,3 +1,5 @@
+const BACKEND_ROOT_URL = 'http://localhost:3001';
+
 function toggleMenu() {
     document.getElementById("dropdown-menu").classList.toggle("show");
 }
