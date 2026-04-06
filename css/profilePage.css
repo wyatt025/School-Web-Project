@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+body {
+    background-color: #0f0f0f; 
+    color: white;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    padding: 24px;
+    background-color: #1a1a1a;
+}
+
+.sidebar h2 { font-size: 1.2rem; margin-bottom: 30px; }
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #e3e3e3;
+    border-radius: 25px;
+    margin-bottom: 5px;
+}
+
+.sidebar nav a.active {
+    background-color: #313131;
+    color: #a8c7fa;
+}
+
+/* Main Content Area */
+.content {
+    flex: 1;
+    padding: 48px;
+    max-width: 800px;
+}
+
+.info-card {
+    background-color: #2b2b2b;
+    border-radius: 24px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+/* Info Rows */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.info-row:hover {
+    background-color: #353535;
+}
+
+.label-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.label-group .text h3 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.label-group .text p {
+    font-size: 0.85rem;
+    color: #9aa0a6;
+    margin: 4px 0 0 0;
+}
+
+.val-display {
+    color: #9aa0a6;
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.no-border { border-bottom: none; }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 56px;
+    background-color: #0f0f0f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.location{
+    margin-top: 32px;
+    margin-left: 30px;
+    margin-right: 10px;
+    display: flex;
+
+}
+
+.country-code { font-size: 10px; color: #aaa; margin-top: -10px; }
+
+.header-center {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    max-width: 720px;
+    width: 1000px;
+
+}
+
+.search-container {
+    display: flex;
+    flex: 1;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 40px;
+    padding-left: 15px;
+}
+
+.search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    outline: none;
+}
+
+.search-btn {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 0 40px 40px 0;
+    padding: 0 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.mic-btn {
+    background: #181818;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #cc0000;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 10px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: #777;
+    border-radius: 50%;
+}
+
+.filter-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #0f0f0f;
+    padding: 12px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 72px; 
+    height: 100vh;
+    background-color: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 80px;
+}
+
+.nav-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: #272727;
+    width: 72px;
+    border-radius: 20px;
+    
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.nav-item span {
+    font-size: 10px;
+}
+
+.header {
+    padding-left: 15px;
+    background-color: #0f0f0f;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+
+.vidzä-logo { 
+  width: 120px; 
+}
+.password-change{
+  text-decoration: none;
+  font-size: 10px;
+}
+.you-section{
+  background-color: #272727;
+  width: 72px;
+  border-radius: 20px;
+}

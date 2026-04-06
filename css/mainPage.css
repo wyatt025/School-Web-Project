@@ -221,6 +221,12 @@ body {
     background-color: #272727;
     border-radius: 20px;
 }
+.home-section{
+  background-color: #272727;
+  width: 72px;
+  border-radius: 20px;
+}
+
 
 .nav-item i {
     font-size: 20px;

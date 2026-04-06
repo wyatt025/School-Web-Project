@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info - Google Account Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../css/profilePage.css">
+</head>
+<body>
+  <header class="header">
+        <div class="header-left">
+            <div class="logo-container">
+                <a href="mainPage.html"><img src="../assets/vidzä_logo.png" alt="Vidzä Logo" class="vidzä-logo"></a>
+            </div>
+            <div class="location">
+                <i class="fa-solid fa-location-dot" ></i>
+                <p class="location-name">Finland</p>
+            </div>
+
+        </div>
+
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" placeholder="Search" class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+            <button class="mic-btn">🎙️</button>
+        </div>
+
+        <div class="header-right">
+            <button class="icon-btn notification-btn">
+                🔔 <span class="badge">9+</span>
+            </button>
+            <button class="user-avatar"> 
+                <a href="login.html" style="text-decoration: none; color: white;"><i class="fa-solid fa-circle-user"></i></a>
+            </button>
+        </div>
+        <nav class="sidebar">
+            <div class="nav-item menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <a href="mainPage.html" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-music"></i>
+                <span>Music</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-fire"></i>        
+                <span>Trending</span>
+            </a>
+            <a href="#" class="nav-item you-section">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>You</span>
+            </a>
+    
+        </nav>
+    </header>
+    <div class="app-container">
+
+        <main class="content">
+            <h1>Personal info</h1>
+            <p>Info about you and your preferences across Vidzä services</p>
+
+            <div class="info-card">
+                <!-- Info Row: Profile Picture -->
+                <div class="info-row">
+                    <div class="label-group">
+                        <span class="icon">📷</span>
+                        <div class="text">
+                            <h3>Profile picture</h3>
+                            <p>A profile picture helps personalize your account</p>
+                        </div>
+                    </div>
+                    <div class="val-display">
+                        <img src="https://placeholder.com" alt="Profile" class="avatar">
+                    </div>
+                </div>
+
+                <!-- Info Row: Name -->
+                <div class="info-row">
+                    <div class="label-group">
+                        <span class="icon">🆔</span>
+                        <div class="text">
+                            <h3>Name</h3>
+                        </div>
+                    </div>
+                    <div class="val-display">Jagrit Handa</div>
+                </div>
+
+                <!-- Info Row: Gender -->
+                <div class="info-row">
+                    <div class="label-group">
+                        <span class="icon">👤</span>
+                        <div class="text">
+                            <h3>Gender</h3>
+                        </div>
+                    </div>
+                    <div class="val-display">Male</div>
+                </div>
+                <div class="info-row">
+                    <div class="label-group">
+                        <span class="icon">📧</span>
+                        <div class="text">
+                            <h3>Email</h3>
+                        </div>
+                    </div>
+                    <div class="val-display">jagrithanda2011@gmail.com</div>
+                </div>
+                <div class="info-row">
+                    <div class="label-group">
+                        <span class="icon">📱</span>
+                        <div class="text">
+                            <h3>Phone number info</h3>
+                        </div>
+                    </div>
+                    <div class="val-display">+358 041 3672959</div>
+                </div>
+                 <div class="info-row">
+                    <div class="label-group">
+                        <span class="icon">🎂</span>
+                        <div class="text">
+                            <h3>Birthday</h3>
+                        </div>
+                    </div>
+                    <div class="val-display">January 1, 1990</div>
+                </div>
+                <div class="info-row">
+                    <div class="label-group">
+                        <span class="icon">🔒</span>
+                        <div class="text">
+                            <h3>Vidzä password</h3>
+                        </div>
+                    </div>
+                    <div class="val-display">********
+                       <br><a href="#" class="password-change">Change password</a></div>
+                </div>
+                
+
+              
+                
+            </div>
+        </main>
+    </div>
+</body>
+</html>
