@@ -4,10 +4,6 @@ function toggleMenu() {
     document.getElementById("dropdown-menu").classList.toggle("show");
 }
 
-function openLoginPage() {
-    window.location.href='../html/login.html'
-}
-
 // Close the menu if the user clicks anywhere else on the screen
 window.onclick = function(event) {
   if (!event.target.closest('.create-container')) {
@@ -104,3 +100,18 @@ function populateVideoGrid(videos) {
 
 // Load videos when page loads
 document.addEventListener('DOMContentLoaded', loadVideos);
+
+// Check if user is logged in
+const user = JSON.parse(localStorage.getItem("user"));
+
+const profileIcon = document.getElementById("profileIcon");
+
+if (user) {
+    profileIcon.addEventListener("click", () => {
+        window.location.href = '../html/profilePage.html';
+    });
+} else {
+    profileIcon.addEventListener("click", () => {
+        window.location.href = '../html/login.html';
+    });
+}
