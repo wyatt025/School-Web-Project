@@ -66,7 +66,7 @@ window.onload = () => {
 };
 
 async function loadComments() {
-    const res = awaitfetch(`${BACKEND_ROOT_URL}/comments/${videoId}`);
+    const res = await fetch(`${BACKEND_ROOT_URL}/comments/${videoId}`);
     const data = await res.json();
 
     const container = document.getElementById("commentsList");
