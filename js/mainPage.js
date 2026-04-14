@@ -1,4 +1,4 @@
-const BACKEND_ROOT_URL = 'https://vidza-b8gjgzebe3hdgyey.eastus-01.azurewebsites.net/';
+const BACKEND_ROOT_URL = 'http://localhost:3001';
 
 function toggleMenu() {
     document.getElementById("dropdown-menu").classList.toggle("show");
