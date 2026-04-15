@@ -1,4 +1,4 @@
-//const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
+const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
 
 function toggleMenu() {
     document.getElementById("dropdown-menu").classList.toggle("show");
