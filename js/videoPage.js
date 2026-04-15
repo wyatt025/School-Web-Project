@@ -38,7 +38,7 @@ async function loadVideo() {
             
             // Update video title and metadata
             document.querySelector('.video-title').textContent = video.video_title;
-            document.querySelector('.video-user').textContent = `${video.username}`;
+            document.querySelector('.video-user').textContent = `${video.lastname}`;
             
             // Update description
             const descElement = document.querySelector('.p-3.rounded p');

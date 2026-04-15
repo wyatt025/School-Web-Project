@@ -90,7 +90,7 @@ function populateVideoGrid(videos) {
                 <div class="title">
                     <i class="fa-solid fa-circle-user" style="margin-bottom: 40px; font-size: 3rem;"></i>
                     <p class="video-title">${video.video_title}<br>
-                    <small class="video-creator" style="color: grey; font-size: 1rem;">${video.username}</small>
+                    <small class="video-creator" style="color: grey; font-size: 1rem;">${video.lastname}</small>
                     </p>
                 </div>
             </div>
