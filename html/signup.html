@@ -14,7 +14,7 @@
     <div class="row w-100" style="max-width: 900px;">
 
       <div class="col-md-6 d-flex flex-column justify-content-center">
-        <button onclick="onBackClick()" class="btn btn-secondary w-25 rounded-pill mb-3">Back</button>
+        <button onclick="openLoginPage()" class="btn btn-secondary w-25 rounded-pill mb-3">Back</button>
         <a href="../html/mainPage.html">
            <img src="../assets/vidzä_logo.png" alt="Vidzä Logo">
         </a>
@@ -23,25 +23,23 @@
 
       <div class="col-md-6">
         <div class="p-4 bg-black rounded">
-          <input class="form-control mb-3" placeholder="First name">
-          <input class="form-control mb-3" placeholder="Last name">
-
-          <div class="row mb-3">
-            <div class="col">
-              <input class="form-control" placeholder="Month">
-            </div>
-            <div class="col">
-              <input class="form-control" placeholder="Day">
-            </div>
-            <div class="col">
-              <input class="form-control" placeholder="Year">
-            </div>
-          </div>
-
-          <input class="form-control mb-3" placeholder="Gender">
-          <input class="form-control mb-4" placeholder="Email">
-          <input class="form-control mb-4" type="password" placeholder="Password">
-          <button class="btn btn-secondary w-100 rounded-pill mb-3">Register</button>
+          <form id="signupForm">
+            <input id="firstName" class="form-control mb-3" placeholder="First name">
+            <input id="lastName" class="form-control mb-3" placeholder="Last name">
+            <input id="dob" class="form-control mb-3" type="date">
+            
+            <select class="form-control mb-3" id ="gender">
+              <option value="">--Select Gender--</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="prefer not to say">Prefer not to say</option>
+            </select>
+          
+            <input id="email" class="form-control mb-4" placeholder="Email">
+            <input id="password" class="form-control mb-4" type="password" placeholder="Password">
+            <button type="submit" class="btn btn-secondary w-100 rounded-pill mb-3">Register</button>
+          </form>
+          
         </div>
       </div>
     </div>
