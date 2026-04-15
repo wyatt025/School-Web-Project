@@ -49,7 +49,7 @@ chipsBox.onscroll = function() {
 // ===== FETCH VIDEOS FROM BACKEND =====
 async function loadVideos() {
     try {
-        const response = await fetch(`${BACKEND_ROOT_URL}/videos`);
+        const response = await fetch(BACKEND_ROOT_URL+'/videos');
         const videos = await response.json();
         populateVideoGrid(videos);
     } catch (error) {
