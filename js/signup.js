@@ -28,6 +28,6 @@ document.getElementById("signupForm").addEventListener("submit", async function(
         openLoginPage()
 
     } catch (error) {
-        alert("Error connecting to server");
+        console.error("Error connecting to server", error);
     }
 });
