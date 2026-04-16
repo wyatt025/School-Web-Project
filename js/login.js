@@ -10,7 +10,7 @@ async function loginUser() {
     }
 
     try {
-        const response = await fetch("http://localhost:3001/login", {
+        const response = await fetch(`${BACKEND_ROOT_URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
