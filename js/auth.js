@@ -4,10 +4,10 @@ function getUser() {
 
 function loadUserInfo() {
     const user = getUser();
-    const userName = document.getElementById("userName");
+    const userEmail = document.getElementById("userEmail");
 
-    if (userName) {
-        userName.textContent = user && user.name ? user.name : "Guest";
+    if (userEmail) {
+        userEmail.textContent = user && user.email ? user.email : "Guest";
     }
 }
 
