@@ -1,3 +1,5 @@
+const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
+
 function openLoginPage(){
     window.location.href='../html/login.html'
 }
