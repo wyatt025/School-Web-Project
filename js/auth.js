@@ -1,5 +1,3 @@
-const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
-
 function getUser() {
     return JSON.parse(localStorage.getItem("user"));
 }
