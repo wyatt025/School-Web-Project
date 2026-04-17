@@ -1,3 +1,4 @@
+//const BACKEND_ROOT_URL = 'https://localhost:3001';
 const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
 
 function openLoginPage(){
