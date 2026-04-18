@@ -2,7 +2,7 @@ async function loadVideo() {
     // Get videoId from URL
     const urlParams = new URLSearchParams(window.location.search);
     const videoId = urlParams.get('videoId');
-    
+
     if (!videoId) {
         console.error('No video ID provided');
         document.querySelector('.video-title').textContent = 'No video selected';
@@ -12,21 +12,21 @@ async function loadVideo() {
     
     try {
         // Fetch video details from backend
-        const response = await fetch(`${BACKEND_ROOT_URL}/videos/${videoId}`);
+        const response = await fetch(`${BACKEND_ROOT_URL}/api/videos/${videoId}`);
         const video = await response.json();
-        
+
         if (video && video.video_file_path) {
             // Extract filename and folder from path
-            const videoPath = video.video_file_path.replace(/\\/g, '/');
-            const parts = videoPath.split('/');
+            const parts = video.video_file_path.replace(/\\/g, '/').split('/');
+            //const parts = videoPath.split('/');
             const filename = parts[parts.length - 1];
-            const folder = parts[parts.length - 2];
-            const fullPath = `${BACKEND_ROOT_URL}/${folder}/${filename}`;
+            //const folder = parts[parts.length - 2];
+            const fullPath = `${BACKEND_ROOT_URL}/videos/${filename}`;
             
             // Debug logs to verify paths and video data
             console.log('Video ID:', videoId);
+           // console.log(folder, filename);
             console.log('Original path from DB:', video.video_file_path);
-            console.log('Converted path:', videoPath);
             console.log('Full src path:', fullPath);
             
             // Update video source specifically (not just any source tag)
@@ -70,7 +70,7 @@ window.onload = () => {
 };
 
 async function loadComments() {
-    const res = await fetch(`${BACKEND_ROOT_URL}/comments/${videoId}`);
+    const res = await fetch(`${BACKEND_ROOT_URL}/api/comments/${videoId}`);
     const data = await res.json();
 
     const container = document.getElementById("commentsList");
