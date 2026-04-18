@@ -1,8 +1,10 @@
+console.log("login.js loaded");
 const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
 
 document.getElementById("loginBtn").addEventListener("click", loginUser);
 
 async function loginUser() {
+    console.log("LOGIN BUTTON CLICKED");
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
@@ -21,21 +23,20 @@ async function loginUser() {
         });
 
         const data = await response.json();
+        console.log("LOGIN RESPONSE:", data);
 
-if (response.ok) {
-    alert("Login successful!");
+        if (response.ok) {
+            alert("Login successful!");
 
-    console.log("Saved user:", data.user); // ✅ KEEP IT HERE (INSIDE)
+            localStorage.clear();
 
-    localStorage.clear(); // force remove old bad data
+            localStorage.setItem("user", JSON.stringify(data.user));
+            localStorage.setItem("userId", data.user.id);
 
-localStorage.setItem("user", JSON.stringify(data.user));
-localStorage.setItem("userId", data.user.id);
+            console.log("Saved user:", data.user);
 
-console.log("AFTER LOGIN SAVE:", localStorage.getItem("user"));
-
-    window.location.href = "mainPage.html";
-} else {
+            window.location.href = "mainPage.html";
+        } else {
             alert(data.message || "Login failed");
         }
 
