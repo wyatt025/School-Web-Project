@@ -8,7 +8,7 @@ function loadUserInfo() {
     const userInfo = document.getElementById("userInfo");
 
     if (userInfo) {
-        userInfo.textContent = user ? user.usrName : "John Doe";    }
+        userInfo.textContent = user ? user.username : "John Doe";    }
 }
 
 function getMenu() {
