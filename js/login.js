@@ -1,4 +1,4 @@
-console.log("login.js loaded");
+//const BACKEND_ROOT_URL = 'http://localhost:3001';
 const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
 
 document.getElementById("loginBtn").addEventListener("click", loginUser);

@@ -1,4 +1,4 @@
-//const BACKEND_ROOT_URL = 'https://localhost:3001';
+//const BACKEND_ROOT_URL = 'http://localhost:3001';
 const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
 
 function openLoginPage(){
@@ -13,6 +13,7 @@ document.getElementById("signupForm").addEventListener("submit", async function(
         lastName: document.getElementById("lastName").value,
         dob: document.getElementById("dob").value,
         gender: document.getElementById("gender").value,
+        userName: document.getElementById("userName").value,
         email: document.getElementById("email").value,
         password: document.getElementById("password").value
     };
