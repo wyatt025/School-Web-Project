@@ -88,7 +88,7 @@ async function addComment() {
 
     if (!input.value) return;
 
-    await fetch(`${BACKEND_ROOT_URL}/comments`, {
+    await fetch(`${BACKEND_ROOT_URL}/api/comments`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
