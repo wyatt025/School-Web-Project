@@ -89,7 +89,7 @@ async function addComment() {
 
     if (!input.value) return;
 
-    await fetch(`${BACKEND_ROOT_URL}/api/comments`, {
+    const response = await fetch(`${BACKEND_ROOT_URL}/api/comments`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -100,7 +100,7 @@ async function addComment() {
             content: input.value
         })
     });
-    if (!res.ok) {
+    if (!response.ok) {
             alert("Please log in or sign up to add a comment");}
     input.value = "";
     loadComments(); // refreshing comments
