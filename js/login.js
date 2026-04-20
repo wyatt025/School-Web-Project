@@ -23,7 +23,6 @@ async function loginUser() {
         });
 
         const data = await response.json();
-        console.log("LOGIN RESPONSE:", data);
 
         if (response.ok) {
             alert("Login successful!");
@@ -33,7 +32,6 @@ async function loginUser() {
             localStorage.setItem("user", JSON.stringify(data.user));
             localStorage.setItem("userId", data.user.id);
 
-            console.log("Saved user:", data.user);
 
             window.location.href = "mainPage.html";
         } else {

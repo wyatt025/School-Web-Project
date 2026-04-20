@@ -8,8 +8,7 @@ function loadUserInfo() {
     const userInfo = document.getElementById("userInfo");
 
     if (userInfo) {
-        console.log('inside infor')
-        userInfo.textContent = user ? user.firstName +" "+ user.lastName : "John Doe";    }
+        userInfo.textContent = user ? user.username : "John Doe";    }
 }
 
 function getMenu() {
