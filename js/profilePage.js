@@ -9,7 +9,7 @@ if (!user || !userId) {
   window.location.href = "login.html";
 }
 
-document.getElementById("name").textContent = user.username;
+document.getElementById("name").textContent = user.fullname;
 document.getElementById("email").textContent = user.email;
 
 document.getElementById("gender").textContent = user.gender;

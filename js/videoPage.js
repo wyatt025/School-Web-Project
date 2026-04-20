@@ -85,6 +85,7 @@ async function loadComments() {
 
 async function addComment() {
     const input = document.getElementById("commentInput");
+    const username = localStorage.getItem("userName");
 
     if (!input.value) return;
 
@@ -95,7 +96,7 @@ async function addComment() {
         },
         body: JSON.stringify({
             video_id: videoId,
-            user_name: "User", 
+            user_name: username, 
             content: input.value
         })
     });
