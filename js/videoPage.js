@@ -75,20 +75,30 @@ async function loadComments() {
 
     const container = document.getElementById("commentsList");
     container.innerHTML = "";
+    const username = localStorage.getItem("userName");
 
     data.forEach(c => {
         container.innerHTML += `
-            <p><b>${c.user_name}</b>: ${c.content}</p>
+        <div id="comment-${c.id}">
+            <b>${c.user_name}</b>: 
+            <span id="text-${c.id}">${c.content}</span>
+        </div>
         `;
+        if(username == c.user_name){
+            container.innerHTML += `
+            <button onClick="onEditClick(${c.id})">Edit</button>
+            <button onClick="onDeleteClick(${c.id})">Delete</button>
+            `;
+        }
+
     });
 }
+
 
 async function addComment() {
     const input = document.getElementById("commentInput");
     const username = localStorage.getItem("userName");
-console.log("Username from localStorage:", username);
-//localStorage.clear();
-//console.log("Username after clearing localStorage:", localStorage.getItem("userName"));
+
     if (!input.value) return;
 
    const poster = await fetch(`${BACKEND_ROOT_URL}/api/comments`, {
@@ -109,4 +119,59 @@ console.log("Username from localStorage:", username);
     }
     input.value = "";
     loadComments(); // refreshing comments
+}
+
+async function onDeleteClick(comment_id) {
+    try {
+        const response = await fetch(`${BACKEND_ROOT_URL}/api/comments`,{
+            method: "DELETE",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                commentId:comment_id
+            })
+        });
+
+        alert("Comment deleted!");
+        loadComments(); // refreshing comments
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+
+async function onEditClick(id){
+    const textSpan = document.getElementById(`text-${id}`);
+    const oldText = textSpan.innerText;
+
+    textSpan.innerHTML = `
+        <input type="text" id="edit-input-${id}" value="${oldText}" />
+        <button onclick="onSaveClick(${id})">Save</button>
+    `;
+}
+
+async function onSaveClick(id){
+    try {
+        const newText = document.getElementById(`edit-input-${id}`).value;
+
+        const response = await fetch(`${BACKEND_ROOT_URL}/api/comments`,{
+            method: "PATCH",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                commentId:id,
+                newContent:newText
+            })
+        });
+
+        alert("Comment Edited!");
+        loadComments(); // refreshing comments
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
+
 }
