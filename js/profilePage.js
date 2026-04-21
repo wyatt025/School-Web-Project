@@ -1,4 +1,4 @@
-const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
+const BACKEND_ROOT_URL = process.env.BACKEND_URL;
 
 const user = JSON.parse(localStorage.getItem("user"));
 const userId = localStorage.getItem("userId");

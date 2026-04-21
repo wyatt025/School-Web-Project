@@ -1,5 +1,6 @@
 //const BACKEND_ROOT_URL = 'http://localhost:3001';
-const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
+//const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
+const BACKEND_ROOT_URL = process.env.BACKEND_URL;
 
 function openLoginPage(){
     window.location.href='../html/login.html'
