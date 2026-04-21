@@ -1,5 +1,6 @@
 //const BACKEND_ROOT_URL = 'http://localhost:3001';
 //const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
+require('dotenv').config();
 const BACKEND_ROOT_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 function toggleMenu() {
