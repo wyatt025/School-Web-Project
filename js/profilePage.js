@@ -1,3 +1,5 @@
+const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
+
 const user = JSON.parse(localStorage.getItem("user"));
 const userId = localStorage.getItem("userId");
 
@@ -16,7 +18,7 @@ document.getElementById("gender").textContent = user.gender;
 document.getElementById("birthday").textContent = user.birthday;
 
 
-fetch(`https://backend-school-web-project.onrender.com/profile/${userId}`)
+fetch(`${BACKEND_ROOT_URL}/profile/${userId}`)
   .then(res => {
     console.log("STATUS:", res.status);
 
