@@ -22,6 +22,7 @@ async function loadProfileDetails() {
         
     });
 }
+loadProfileDetails();
 document.getElementById("birthday").textContent = user.birthday;
 
 fetch(`${BACKEND_ROOT_URL}/profile/${userId}`)
