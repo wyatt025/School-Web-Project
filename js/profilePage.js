@@ -14,30 +14,9 @@ if (!user || !userId) {
 document.getElementById("username").textContent = user.username;
 document.getElementById("name").textContent = user.fullname;
 document.getElementById("email").textContent = user.email;
+document.getElementById("gender").textContent = user.gender ? user.gender : "Not available";
+document.getElementById("birthday").textContent = user.birthday ? user.birthday.split("T")[0]: "Not set";;
 
-document.getElementById("gender").textContent = user.gender;
-document.getElementById("birthday").textContent = user.birthday;
-
-
-fetch(`${BACKEND_ROOT_URL}/profile/${userId}`)
-  .then(res => {
-    //console.log("STATUS:", res.status);
-
-    return res.json();
-  })
-  .then(data => {
-    document.getElementById("gender").textContent =
-      data.gender ? data.gender : "Not available";
-
-    const formattedDate = data.birthday
-  ? data.birthday.split("T")[0]
-  : "Not set";
-
-document.getElementById("birthday").textContent = formattedDate;
-  })
-  .catch(err => {
-    console.error("❌ FETCH ERROR:", err);
-  });
   //console.log(user)
   async function EditClick(id){
 
