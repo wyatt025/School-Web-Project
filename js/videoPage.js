@@ -77,20 +77,32 @@ async function loadComments() {
     container.innerHTML = "";
     const username = localStorage.getItem("userName");
 
-    data.forEach(c => {
+     data.forEach(c => {
         container.innerHTML += `
-        <div id="comment-${c.id}">
-            <b>${c.user_name}</b>: 
-            <span id="text-${c.id}">${c.content}</span>
-        </div>
-        `;
-        if(username == c.user_name){
-            container.innerHTML += `
-            <button onClick="onEditClick(${c.id})">Edit</button>
-            <button onClick="onDeleteClick(${c.id})">Delete</button>
-            `;
-        }
+        
+        <div class="d-flex justify-content-between align-items-start py-2" id="comment-${c.id}">
 
+            <!-- LEFT: comment text -->
+            <div>
+                <b>${c.user_name}</b><br>
+                <span id="text-${c.id}">${c.content}</span>
+            </div>
+
+            <!-- RIGHT: three dots -->
+            ${username == c.user_name ? `
+            <div class="position-relative">
+                <button class="btn btn-sm btn-dark border-0" onclick="openCommentMenu(this)">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end comment-dropdown">
+                    <li><a class="dropdown-item" onclick="onEditClick(${c.id})">Edit</a></li>
+                    <li><a class="dropdown-item" onclick="onDeleteClick(${c.id})">Delete</a></li>
+                </ul>
+            </div>
+            ` : ''}
+            </div>
+        `;
     });
 }
 
@@ -123,6 +135,7 @@ async function addComment() {
 
 async function onDeleteClick(comment_id) {
     try {
+        closeMenus();
         const response = await fetch(`${BACKEND_ROOT_URL}/api/comments`,{
             method: "DELETE",
             headers:{
@@ -142,7 +155,9 @@ async function onDeleteClick(comment_id) {
 }
 
 
-async function onEditClick(id){
+function onEditClick(id){
+     closeMenus();
+
     const textSpan = document.getElementById(`text-${id}`);
     const oldText = textSpan.innerText;
 
@@ -174,4 +189,15 @@ async function onSaveClick(id){
         console.error("Error:", error);
     }
 
+}
+
+function openCommentMenu(btn) {
+    const menu = btn.nextElementSibling;
+    menu.classList.toggle("show");
+}
+
+function closeMenus() {
+    document.querySelectorAll(".comment-dropdown").forEach(m => {
+        m.classList.remove("show");
+    });
 }
