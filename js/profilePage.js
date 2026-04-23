@@ -19,24 +19,30 @@ async function loadProfileDetails() {
         document.getElementById("name").textContent = data.fullname;
         document.getElementById("email").textContent = data.email;
         document.getElementById("gender").textContent = data.gender;
-        document.getElementById("dob").textContent = data.birthday;
-        if (userId == user.id) {
-            document.getElementById("editProfile").innerHTML = `
-            <div class="edit-profile">
-                <button id="editBtn">Edit Profile</button>
-                <ul id="editMenu" class="hidden">
-                    <li><a href="editProfile.html">Edit Details</a></li>
-                    <li><a href="changePassword.html">Change Password</a></li>
-                </ul>
-            </div>
-            `;
-        }
-        document.getElementById("editBtn").addEventListener("click", () => {
-            document.getElementById("editMenu").classList.toggle("hidden");
-        });
+        
     });
 }
+document.getElementById("birthday").textContent = user.birthday;
 
+fetch(`${BACKEND_ROOT_URL}/profile/${userId}`)
+  .then(res => {
+    //console.log("STATUS:", res.status);
+
+    return res.json();
+  })
+  .then(data => {
+    document.getElementById("gender").textContent =
+      data.gender ? data.gender : "Not available";
+
+    const formattedDate = data.birthday
+  ? data.birthday.split("T")[0]
+  : "Not set";
+
+document.getElementById("birthday").textContent = formattedDate;
+  })
+  .catch(err => {
+    console.error("❌ FETCH ERROR:", err);
+  });
   //console.log(user)
   async function EditClick(id){
 
