@@ -78,6 +78,8 @@ async function loadComments() {
     const username = localStorage.getItem("userName");
 
      data.forEach(c => {
+        loadReactions(c.id, username);
+
         container.innerHTML += `
         
         <div class="d-flex justify-content-between align-items-start py-2" id="comment-${c.id}">
@@ -86,6 +88,14 @@ async function loadComments() {
             <div>
                 <b>${c.user_name}</b><br>
                 <span id="text-${c.id}">${c.content}</span>
+
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-hand-thumbs-up" id="likeBtn-${c.id}" onclick="react(${c.id}, 1)"></i>
+                    <span id="like-count-${c.id}">0</span>
+                    <i class="bi bi-hand-thumbs-down" id="dislikeBtn-${c.id}" onclick="react(${c.id}, 0)"></i>
+                    <span id="dislike-count-${c.id}">0</span>
+                </div>
+                
             </div>
 
             <!-- RIGHT: three dots -->
@@ -278,3 +288,73 @@ document.querySelectorAll("#emojiPicker .emoji").forEach(e => {
 document.addEventListener("click", () => {
     emojiPicker.style.display = "none";
 });
+
+async function react(commentId, reaction) {
+    const username = localStorage.getItem("userName");
+
+    if(!username) {
+        alert("Please log in or sign up to add reaction");
+        return;
+    }
+
+    const poster = await fetch(`${BACKEND_ROOT_URL}/api/reactions`, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+        },
+            body: JSON.stringify({
+            commentId: commentId,
+            userName: username,
+            reaction: reaction,
+        }),
+    });
+
+    loadReactions(commentId, username);
+}
+
+async function loadReactions(commentId, username) {
+    const res = await fetch(`${BACKEND_ROOT_URL}/api/reactions/${commentId}?userName=${username}`);
+    const data = await res.json();
+
+    document.getElementById(`like-count-${commentId}`).innerText =
+        data.likes || 0;
+
+    document.getElementById(`dislike-count-${commentId}`).innerText =
+        data.dislikes || 0;
+
+    setActiveReaction(commentId, data.userreaction);
+}
+
+function setActiveReaction(commentId, userReaction) {
+  const commentLikeBtn = document.getElementById(`likeBtn-${commentId}`);
+  const commentDislikeBtn = document.getElementById(`dislikeBtn-${commentId}`);
+
+  commentLikeBtn.classList.remove("bi-hand-thumbs-up-fill");
+  commentLikeBtn.classList.add("bi-hand-thumbs-up");
+  commentLikeBtn.style.color = "";
+
+  commentDislikeBtn.classList.remove("bi-hand-thumbs-down-fill");
+  commentDislikeBtn.classList.add("bi-hand-thumbs-down");
+  commentDislikeBtn.style.color = "";
+
+  if (userReaction === 1) {
+    commentLikeBtn.classList.remove("bi-hand-thumbs-up");
+    commentLikeBtn.classList.add("bi-hand-thumbs-up-fill");
+    commentLikeBtn.style.color = "white";
+
+    commentDislikeBtn.classList.remove("bi-hand-thumbs-down-fill");
+    commentDislikeBtn.classList.add("bi-hand-thumbs-down");
+    return;
+  }
+
+  if (userReaction === 0) {
+    commentDislikeBtn.classList.remove("bi-hand-thumbs-down");
+    commentDislikeBtn.classList.add("bi-hand-thumbs-down-fill");
+    commentDislikeBtn.style.color = "white";
+
+    commentLikeBtn.classList.remove("bi-hand-thumbs-up-fill");
+    commentLikeBtn.classList.add("bi-hand-thumbs-up");
+    return;
+  }
+
+}
