@@ -3,7 +3,7 @@ const BACKEND_ROOT_URL = 'https://backend-school-web-project.onrender.com';
 const user = JSON.parse(localStorage.getItem("user"));
 const userId = localStorage.getItem("userId");
 
-console.log("User from localStorage:", user);
+//console.log("User from localStorage:", user);
 //console.log("UserId:", userId);
 
 if (!user || !userId) {
@@ -17,7 +17,6 @@ document.getElementById("email").textContent = user.email;
 document.getElementById("gender").textContent = user.gender ? user.gender : "Not available";
 document.getElementById("birthday").textContent = user.birthday ? user.birthday.split("T")[0]: "Not set";
 
-// 1. ADD THIS LINE at the top of your file
 const fields = ["username", "name", "email", "gender", "birthday"];
 
 const editBtn = document.getElementById("edit-btn");
@@ -25,7 +24,7 @@ const btnContainer = document.getElementById("button-container");
 let isEditing = false;
 
 editBtn.addEventListener("click", async () => {
-    // 2. Wrap this in a check to ensure the element exists
+    // Wrap this in a check to ensure the element exists
     const passwordContainer = document.getElementById("password-container");
 
     if (!isEditing) {
@@ -65,7 +64,7 @@ editBtn.addEventListener("click", async () => {
         }
 
     } else {
-        // 1. Grab the elements (using the names you already defined: getUserName, getName, etc.)
+        // Grab the elements
         const getUserName = document.getElementById("input-username");
         const getName = document.getElementById("input-name");
         const getEmail = document.getElementById("input-email");
@@ -73,13 +72,13 @@ editBtn.addEventListener("click", async () => {
         const getDob = document.getElementById("input-birthday");
         const getPass = document.getElementById("input-password");
 
-        // 2. Safety check: make sure they exist
+        // Safety check: make sure elements exist
         if (!getUserName || !getName || !getEmail || !getGender || !getDob) {
             console.error("One or more input fields were not found in the DOM.");
             return;
         }
 
-        // 3. Get values and split the name
+        // split the name
         const userName = getUserName.value.trim();
         const fullName = getName.value.trim();
         const email = getEmail.value.trim();
@@ -92,13 +91,13 @@ editBtn.addEventListener("click", async () => {
         const firstName = nameParts[0]; // First word
         const lastName = nameParts.slice(1).join(" "); // Everything else
 
-        // 4. Validation
+        // Validation
         if (!userName || !fullName || !email || !gender || !dob) {
             alert("All fields (except password) are required.");
             return;
         }
 
-        // 5. Build data object with separate names
+        // Build data object to send to backend
         const updatedData = {
             userName: userName,
             firstName: firstName,
