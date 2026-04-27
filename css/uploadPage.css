@@ -1,3 +1,17 @@
+#upload-btn{
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#upload-btn:hover {
+    transform: translate();
+    transition: 0.2s;
+    background: linear-gradient(to right,  #5b65a7, #d78aec, #f0a3d2);
+    color:#0f0f0f;
+}
 
 ::-webkit-file-upload-button {
     background: transparent;
