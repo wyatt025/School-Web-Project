@@ -15,7 +15,8 @@ function getMenu() {
     return document.getElementById("profileMenu");
 }
 
-function openProfileMenu() {
+function openProfileMenu(event) {
+    if (event) event.stopPropagation(); 
     console.log('openprofile menuuu')
     const menu = getMenu();
 
@@ -43,11 +44,15 @@ function openProfilePage() {
     } else {
         window.location.href = "../html/profilePage.html";
     }
-}
-function openUploadPage() {
-    if (!getUser()) {
-        window.location.href = "../html/login.html";
-    } else {
-        window.location.href = "../html/uploadPage.html";
+}   
+window.onclick = function(event) {
+    const menu = getMenu();
+    const btn = document.getElementById("profileIcon");
+
+    // If the menu is open AND the click wasn't on the button or inside the menu
+    if (menu && menu.style.display === "block") {
+        if (!btn.contains(event.target) && !menu.contains(event.target)) {
+            menu.style.display = "none";
+        }
     }
 }

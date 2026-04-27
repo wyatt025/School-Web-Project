@@ -15,7 +15,7 @@ document.getElementById("username").textContent = user.username;
 document.getElementById("name").textContent = user.fullname;
 document.getElementById("email").textContent = user.email;
 document.getElementById("gender").textContent = user.gender ? user.gender : "Not available";
-document.getElementById("birthday").textContent = user.birthday ? user.birthday.split("T")[0]: "Not set";
+document.getElementById("birthday").textContent = user.birthday ? user.birthday.split("T")[0].split("-").reverse().join("-"): "Not set";
 
 const fields = ["username", "name", "email", "gender", "birthday"];
 
@@ -46,21 +46,21 @@ editBtn.addEventListener("click", async () => {
               // Create a dropdown for gender
               displayDiv.innerHTML = `
                 <select id="input-gender">
-                    <option value="Male" ${currentVal === 'Male' ? 'selected' : ''}>Male</option>
-                    <option value="Female" ${currentVal === 'Female' ? 'selected' : ''}>Female</option>
-                    <option value="Prefer not to say" ${currentVal === 'Prefer not to say' || currentVal === 'Not available' ? 'selected' : ''}>Rather not say</option>
+                    <option class="option-select" value="Male" ${currentVal === 'Male' ? 'selected' : ''}>Male</option>
+                    <option class="option-select" value="Female" ${currentVal === 'Female' ? 'selected' : ''}>Female</option>
+                    <option class="option-select" value="Prefer not to say" ${currentVal === 'Prefer not to say' || currentVal === 'Not available' ? 'selected' : ''}>Rather not say</option>
                 </select>`;
             } else if (id === "birthday") {
               // Use a proper date picker for birthday
               displayDiv.innerHTML = `<input type="date" id="input-birthday" value="${currentVal === 'Not set' ? '' : currentVal}">`;
             } else {
               // Standard text input for everything else
-              displayDiv.innerHTML = `<input type="text" id="input-${id}" value="${currentVal === 'Not available' ? '' : currentVal}">`;
+              displayDiv.innerHTML = `<input type="text" class="form-input" id="input-${id}" value="${currentVal === 'Not available' ? '' : currentVal}">`;
             }
         } 
     });
         if (passwordContainer) {
-            passwordContainer.innerHTML = `<input type="password" id="input-password" placeholder="New password (optional)">`;
+            passwordContainer.innerHTML = `<input type="password" class="form-input" id="input-password" placeholder="New password (optional)">`;
         }
 
     } else {

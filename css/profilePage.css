@@ -241,7 +241,8 @@ body {
 }
 
 .nav-item:hover {
-    background-color: #272727;
+    transition: 0.2s;
+    background: linear-gradient(45deg, #5b65a7, #0f0f0f, #0f0f0f, #f0a3d2);
     width: 72px;
     border-radius: 20px;
     
@@ -264,7 +265,6 @@ body {
     z-index: 1001;
 }
 
-
 .vidzä-logo { 
   width: 120px; 
 }
@@ -273,7 +273,84 @@ body {
   font-size: 10px;
 }
 .you-section{
-  background-color: #272727;
+  background: linear-gradient(45deg, #5b65a7, #d78aec, #f0a3d2);
   width: 72px;
   border-radius: 20px;
+}
+#button-container {
+    margin-top: .5em;
+}
+#edit-btn{
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#edit-btn:hover {
+    transform: translate();
+    transition: 0.2s;
+    background: linear-gradient(to right,  #5b65a7, #d78aec, #f0a3d2);
+    color:#0f0f0f;
+}
+#cancel-btn{
+    background-color: #fc4222;
+    color: white;
+    padding: .5em .7em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+#cancel-btn:hover {
+    background: linear-gradient(to right,  #5b65a7, #d78aec, #f0a3d2, #fc4222, #fc4222);
+    color:#0f0f0f;
+}
+.form-input{
+    background-color: transparent;
+    padding: .2em;
+    color: white;
+    border: .1em solid #686868;
+    border-radius: 5px;
+}
+.form-input:focus {
+    outline: none;
+    transition: 0.2s;
+    border: .1em solid transparent;
+    border-radius: 5px;
+    background: 
+    linear-gradient(to right, #2b2b2b, #2b2b2b), 
+    linear-gradient(to right, #5b65a7, #d78aec, #f0a3d2); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    
+    width: inherit;
+    height: inherit;
+    padding: .2em;
+    /*border-image: linear-gradient(to right, #5b65a7, #d78aec, #f0a3d2) 1;*/
+}
+#input-gender{
+    background-color: transparent;
+    padding: .2em;
+    color: white;
+    border: .1em solid #686868;
+    border-radius: 5px;
+}
+.option-select{
+    background-color:#2a2a2a;
+    color: white;
+}
+#input-birthday{
+    background-color: transparent;
+    padding: .2em;
+    color: white;
+    border: .1em solid #686868;
+    border-radius: 5px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    filter: invert(74%) sepia(21%) saturate(913%) hue-rotate(224deg) brightness(94%) contrast(93%);
 }

@@ -35,7 +35,7 @@
                 🔔 <span class="badge">9+</span>
             </button>
 
-            <button  id="profileIcon" class="user-avatar" onclick="openProfileMenu()"> 
+            <button  id="profileIcon" class="user-avatar" onclick="openProfileMenu(event)"> 
                 <img src="\assets\profile.png" class="user-pic">
             </button>
 
@@ -46,16 +46,16 @@
                 </div>
                 <hr>
                 <a href="../html/profilePage.html" class="sub-menu-link">
-                    <img src="\assets\vidzä_logo.png">
-                    <p>My Vidzä account</p>
+                    <div><img src="\assets\vidzä_logo.png"></div>
+                    <div><p>My Vidzä account</p></div>
                 </a>
-                <a href="#" class="sub-menu-link">
-                    <img src="\assets\upload.png">
-                    <p>Upload video</p>
+                <a href="../html/uploadPage.html" class="sub-menu-link">
+                    <div><img src="\assets\upload.png"></div>
+                    <div><p>Upload video</p></div>
                 </a>
                 <a href="#" class="sub-menu-link" onclick="signout()">
-                    <img src="\assets\logout.png">
-                    <p>Sign out</p>
+                    <div><img src="\assets\logout.png"></div>
+                    <div><p>Sign out</p></div>
                 </a>
             </div>
         </div>
@@ -79,7 +79,7 @@
                 <i class="fa-solid fa-circle-user"></i>
                 <span>You</span>
             </a>
-            <a href="#" class="nav-item" onclick="openUploadPage()">
+            <a href="uploadPage.html" class="nav-item" onclick="openUploadPage()">
                 <i class="fa-solid fa-circle-arrow-up"></i>
                 <span>Upload</span>
             </a>
