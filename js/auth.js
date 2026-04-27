@@ -44,3 +44,10 @@ function openProfilePage() {
         window.location.href = "../html/profilePage.html";
     }
 }
+function openUploadPage() {
+    if (!getUser()) {
+        window.location.href = "../html/login.html";
+    } else {
+        window.location.href = "../html/uploadPage.html";
+    }
+}

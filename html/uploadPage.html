@@ -84,90 +84,65 @@
     <div class="app-container">
 
         <main class="content">
-            <h1>Personal info</h1>
-            <p>Info about you and your preferences across Vidzä services</p>
-
+            <h1>Upload your video</h1>
+            <div id="button-container">
+                <button id="edit-btn">Input</button>
+            </div>
             <div class="info-card">
-                <!-- Info Row: Profile Picture -->
+                <!-- Info Row: Thumbnail -->
                 <div class="info-row">
                     <div class="label-group">
                         <span class="icon">📷</span>
                         <div class="text">
-                            <h3>Profile picture</h3>
-                            <p>A profile picture helps personalize your account</p>
+                            <h3>Thumbnail</h3>
+                            <p>A thumbnail helps visualize your video</p>
                         </div>
                     </div>
-                    <div class="val-display">
-                        <img src="https://placeholder.com" alt="Profile" class="avatar">
+                    <div class="val-display" id="thumbnail-container">
+                        <input type="file" id="thumbnail-input" accept="image/jpeg, image/png">
                     </div>
                 </div>
 
-                <!-- Info Row: Username -->
+                <!-- Info Row: Video File -->
                 <div class="info-row">
                     <div class="label-group">
-                        <span class="icon">👤</span>
+                        <span class="icon">📷</span>
                         <div class="text">
-                            <h3>Username</h3>
+                            <h3>Video File</h3>
+                            <p>Upload your video file here</p> 
+                            <br><span class="text-muted">Supported formats: .mp4</span></div> 
                         </div>
                     </div>
-                    <div class="val-display" id="username">
-                        
+                    <div class="val-display" id="video-file-container">
+                        <input type="file" id="video-file-input" accept="video/mp4">
                     </div>
                 </div>
 
-                <!-- Info Row: Name -->
+                <!-- Info Row: Video Title -->
                 <div class="info-row">
                     <div class="label-group">
-                        <span class="icon">🆔</span>
+                        <span class="icon">>Title</span>
                         <div class="text">
-                            <h3>Name</h3>
+                            <h3>Video Title</h3>
                         </div>
                     </div>
-                    <div class="val-display" id="name"></div>
+                    <div class="val-display" id="video-title">
+                        <input type="text" id="video-title-input" placeholder="Enter video title">
+                    </div>
                 </div>
 
-                <!-- Info Row: Gender -->
+                <!-- Info Row: Video Description -->
                 <div class="info-row">
                     <div class="label-group">
-                        <span class="icon">👤</span>
+                        <span class="icon">�</span>
                         <div class="text">
-                            <h3>Gender</h3>
+                            <h3>Video Description</h3>
                         </div>
                     </div>
-                    <div class="val-display" id="gender"></div>
+                    <div class="val-display" id="video-description">
+                        <textarea id="video-description-input" placeholder="Enter video description"></textarea>
+                    </div>
                 </div>
-                <div class="info-row">
-                    <div class="label-group">
-                        <span class="icon">📧</span>
-                        <div class="text">
-                            <h3>Email</h3>
-                        </div>
-                    </div>
-                    <div class="val-display" id="email"></div>
-                </div>
-                 <div class="info-row">
-                    <div class="label-group">
-                        <span class="icon">🎂</span>
-                        <div class="text">
-                            <h3>Birthday</h3>
-                        </div>
-                    </div>
-                    <div class="val-display" id="birthday"></div>
-                </div>
-                <div class="info-row">
-                    <div class="label-group">
-                        <span class="icon">🔒</span>
-                        <div class="text">
-                            <h3>Vidzä password</h3>
-                        </div>
-                    </div>
-                    <div class="val-display" id="password-container">
-                        ********
-                    </div>
-                </div>                     
-            </div>
-            <div id="button-container">
-                <button id="edit-btn">Edit Profile</button>
             </div>
         </main>
     </div>
