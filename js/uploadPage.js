@@ -11,12 +11,12 @@ const upload_btn = document.getElementById("upload-btn");
 
 upload_btn.hidden= true; // Hide the button until we verify all fields are filled
 
-const form = document.querySelector("form");
-const requiredFields = ["title", "description", "video", "thumbnail"];
+const form =document.getElementById("upload-form");
+const requiredFields = ["video-title-input", "video-description-input", "video-file-input", "thumbnail-input"];
 
 form.addEventListener("input", () => {
   const allFilled = requiredFields.every(field => {
-        const element = form.elements[field];// Safety check: ensure the element exists
+        const element = document.getElementById(field);// Safety check: ensure the element exists
         if (!element) return false; // Safety check: if element is missing, field is not filled
 
         if (element.type === "file") {
@@ -31,9 +31,9 @@ form.addEventListener("input", () => {
 
 upload_btn.addEventListener("click", function(event) {
   event.preventDefault();
-  const form = document.querySelector("form");
+  const form =document.getElementById("upload-form");
   const formData = new FormData(form);
-  formData.append("userId", currentUserId);
+  formData.append("userId", userId);
   fetch(`${BACKEND_ROOT_URL}/api/upload`, {
     method: "POST",
     body: formData
