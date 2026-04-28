@@ -2,3 +2,104 @@
     text-align: right;
     padding-right: 50px;
 }
+#backBtn {
+    border: .2em solid transparent;
+    background: 
+    linear-gradient(to right, #5b65a7, #d78aec, #f0a3d2); 
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+#backBtn:hover {
+    border: .2em solid transparent;
+    background:  linear-gradient(to right, #5b65a7, #212529,#212529, #f0a3d2); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+#registerBtn {
+    width: 100%;
+    border: .2em solid transparent;
+    background:  
+    linear-gradient(to right, #5b65a7,#abe0ff,#d78aec,#d78aec, #d78aec, #f0a3d2,#fce6f6);
+    border-radius: 30px;
+    color: black;
+    padding: 10px 20px;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+#registerBtn:hover {
+    border: .2em solid transparent;
+    color : white;
+    background:
+    linear-gradient(to right, black, black),
+    linear-gradient(to right, #5b65a7,#abe0ff,#d78aec,#d78aec, #d78aec, #f0a3d2,#fce6f6);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+#firstName, #lastName, #userName, #email, #password {
+    background: black;
+    border: .2em solid #333;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#firstName:hover, #lastName:hover, #userName:hover, #email:hover, #password:hover {
+    outline: none;
+    border: .2em solid transparent;
+    background: 
+    linear-gradient(to right, black, black), 
+    linear-gradient(to right, #5b65a7, black, #f0a3d2); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+#firstName:focus, #lastName:focus, #userName:focus, #email:focus, #password:focus {
+    outline: none;
+    border: .2em solid transparent;
+    background: 
+    linear-gradient(to right, black, black), 
+    linear-gradient(to right, #5b65a7, #d78aec, #f0a3d2); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+#firstName::placeholder, #lastName::placeholder, #userName::placeholder, #email::placeholder, #password::placeholder {
+    color: #333;
+}
+
+#dob {
+    background: black;
+    border: .2em solid #333;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#gender {
+    background: black;
+    border: .2em solid #333;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+option{
+    background: black;
+    color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    filter: invert(74%) sepia(21%) saturate(913%) hue-rotate(224deg) brightness(94%) contrast(93%);
+}
