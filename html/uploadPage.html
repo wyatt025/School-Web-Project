@@ -20,7 +20,6 @@
                 <i class="fa-solid fa-location-dot" ></i>
                 <p class="location-name">Finland</p>
             </div>
-
         </div>
 
         <div class="header-right">
@@ -89,64 +88,64 @@
                     <div class="info-row">
                         <div class="label-group">
                             <span class="icon">📷</span>
-                        <div class="text">
-                            <h3>Thumbnail</h3>
-                            <p>A thumbnail helps visualize your video</p>
-                            <p style="color: rgb(148, 0, 0); font-size: 0.8rem;">Supported formats: .jpg, .png</p>
+                            <div class="text">
+                                <h3>Thumbnail</h3>
+                                <p>A thumbnail helps visualize your video</p>
+                                <p style="color: rgb(148, 0, 0); font-size: 0.8rem;">Supported formats: .jpg, .png</p>
+                            </div>
+                        </div>
+                        <div class="val-display" id="thumbnail-container">
+                            <input type="file" name="thumbnail" id="thumbnail-input" accept="image/jpeg, image/png">
                         </div>
                     </div>
-                    <div class="val-display" id="thumbnail-container">
-                        <input type="file" name="thumbnail" id="thumbnail-input" accept="image/jpeg, image/png">
-                    </div>
-                </div>
 
-                <!-- Info Row: Video File -->
-                <div class="info-row">
-                    <div class="label-group">
-                        <span class="icon">📷</span>
-                        <div class="text">
-                            <h3>Video File</h3>
-                            <p>Upload your video file here</p> 
-                            <p style="color: rgb(148, 0, 0); font-size: 0.8rem;">Supported formats: .mp4</p></div> 
+                    <!-- Info Row: Video File -->
+                    <div class="info-row">
+                        <div class="label-group">
+                            <span class="icon">📷</span>
+                            <div class="text">
+                                <h3>Video File</h3>
+                                <p>Upload your video file here</p> 
+                                <p style="color: rgb(148, 0, 0); font-size: 0.8rem;">Supported formats: .mp4</p></div> 
+                            </div>
+                            <div class="val-display" id="video-file-container">
+                                <input type="file" name="video" id="video-file-input" accept="video/mp4">
+                            </div>
+                    </div>
+                    <!-- Info Row: Video Title -->
+                    <div class="info-row">
+                        <div class="label-group">
+                            <span class="icon">�</span>
+                            <div class="text">
+                                <h3>Video Title</h3>
+                            </div>
                         </div>
-                        <div class="val-display" id="video-file-container">
-                            <input type="file" name="video" id="video-file-input" accept="video/mp4">
-                        </div>
-                </div>
-                <!-- Info Row: Video Title -->
-                <div class="info-row">
-                    <div class="label-group">
-                        <span class="icon">�</span>
-                        <div class="text">
-                            <h3>Video Title</h3>
+                        <div class="val-display" id="video-title">
+                            <input type="text" class="form-input" name="title" id="video-title-input" placeholder="Enter video title">
                         </div>
                     </div>
-                    <div class="val-display" id="video-title">
-                        <input type="text" class="form-input" name="title" id="video-title-input" placeholder="Enter video title">
-                    </div>
-                </div>
 
-                <!-- Info Row: Video Description -->
-                <div class="info-row">
-                    <div class="label-group">
-                        <span class="icon">�</span>
-                        <div class="text">
-                            <h3>Video Description</h3>
+                    <!-- Info Row: Video Description -->
+                    <div class="info-row">
+                        <div class="label-group">
+                            <span class="icon">�</span>
+                            <div class="text">
+                                <h3>Video Description</h3>
+                            </div>
+                        </div>
+                        <div class="val-display" id="video-description">
+                            <textarea class="form-input" name="description" id="video-description-input" placeholder="Enter video description"></textarea>
                         </div>
                     </div>
-                    <div class="val-display" id="video-description">
-                        <textarea class="form-input" name="description" id="video-description-input" placeholder="Enter video description"></textarea>
+                </div>
+                <div id="button-container">
+                    <button type="button" id="cancel-btn">Cancel</button>
+                    <button type="button" id="upload-btn">Upload</button>
+                    <!-- The spinner is hidden by default -->
+                    <div id="loading-area" style="display: none; margin-bottom: 10px;">
+                        <span class="spinner">⏳</span> Uploading your video, please wait...
                     </div>
                 </div>
-            </div>
-            <div id="button-container">
-                <button type="button" id="cancel-btn">Cancel</button>
-                <button type="button" id="upload-btn">Upload</button>
-                <!-- The spinner is hidden by default -->
-                <div id="loading-area" style="display: none; margin-bottom: 10px;">
-                <span class="spinner">⏳</span> Uploading your video, please wait...
-                </div>
-            </div>
 
             </form>
 
