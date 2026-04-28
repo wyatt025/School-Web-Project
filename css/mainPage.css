@@ -351,3 +351,35 @@ a{
     min-width: 100%;
     min-height: 100%
 }
+
+.search-container {
+    position: relative;
+}
+
+.results-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(4, 0, 0);
+    border: 1px solid #ccc;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.results-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.results-list li:hover {
+    background:
+    linear-gradient(45deg, #5b65a7, #5b65a7, #2b2b2b, #2b2b2b, #d78aec, #f0a3d2), 
+    linear-gradient(45deg, #2b2b2b, #2b2b2b);
+}

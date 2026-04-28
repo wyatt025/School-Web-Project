@@ -109,4 +109,55 @@ function populateVideoGrid(videos) {
 document.addEventListener('DOMContentLoaded', loadVideos);
 
 
-//adding this here for testing purposes
+const searchBtn = document.getElementById("searchBtn");
+const searchInput = document.getElementById("searchInput");
+const resultsList = document.getElementById("searchResults");
+
+// test data
+const data = [
+    "JavaScript tutorial",
+    "HTML full course",
+    "CSS flexbox",
+    "React basics",
+    "Node.js guide"
+];
+
+searchBtn.addEventListener("click", () => {
+    const query = searchInput.value.toLowerCase();
+
+    const filtered = data.filter(item =>
+        item.toLowerCase().includes(query)
+    );
+
+    showResults(filtered);
+});
+
+function showResults(results) {
+    resultsList.innerHTML = "";
+
+    if (results.length === 0) {
+        resultsList.style.display = "none";
+        return;
+    }
+
+    results.forEach(item => {
+        console.log('item',item)
+        const li = document.createElement("li");
+        li.textContent = item;
+
+        li.addEventListener("click", () => {
+            searchInput.value = item;
+            resultsList.style.display = "none";
+        });
+
+        resultsList.appendChild(li);
+    });
+
+    resultsList.style.display = "block";
+}
+
+document.addEventListener("click", (e) => {
+    if (!document.querySelector(".search-container").contains(e.target)) {
+        resultsList.style.display = "none";
+    }
+});
