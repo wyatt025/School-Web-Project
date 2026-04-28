@@ -113,23 +113,15 @@ const searchBtn = document.getElementById("searchBtn");
 const searchInput = document.getElementById("searchInput");
 const resultsList = document.getElementById("searchResults");
 
-// test data
-const data = [
-    "JavaScript tutorial",
-    "HTML full course",
-    "CSS flexbox",
-    "React basics",
-    "Node.js guide"
-];
-
 searchBtn.addEventListener("click", () => {
     const query = searchInput.value.toLowerCase();
 
-    const filtered = data.filter(item =>
-        item.toLowerCase().includes(query)
-    );
-
-    showResults(filtered);
+    if (!query) {
+        resultsList.style.display = "none";
+        return;
+    }
+    
+    fetchSearchResult(query);
 });
 
 searchInput.addEventListener("keydown", function (e) {
@@ -138,22 +130,30 @@ searchInput.addEventListener("keydown", function (e) {
     }
 });
 
+async function fetchSearchResult(query){
+    try {
+        const response = await fetch(`${BACKEND_ROOT_URL}/api/search/${encodeURIComponent(query)}`);
+        const data = await response.json();
+
+        showResults(data);
+    } catch (error) {
+        console.error("Error fetching search results:", error);
+    }
+}
+
 function showResults(results) {
     resultsList.innerHTML = "";
 
-    if (results.length === 0) {
-        resultsList.style.display = "none";
-        return;
-    }
-
-    results.forEach(item => {
-        console.log('item',item)
+    results.forEach(video => {
         const li = document.createElement("li");
-        li.textContent = item;
+
+        li.innerHTML = `
+            <img src="${video.thumbnail_file_path}" width="40">
+            <span>${video.video_title}</span>
+        `;
 
         li.addEventListener("click", () => {
-            searchInput.value = item;
-            resultsList.style.display = "none";
+            window.location.href = `../html/videoPage.html?videoId=${video.id}`;
         });
 
         resultsList.appendChild(li);
