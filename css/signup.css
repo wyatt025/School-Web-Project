@@ -67,7 +67,7 @@
     background-origin: padding-box, border-box;
 }
 #firstName::placeholder, #lastName::placeholder, #userName::placeholder, #email::placeholder, #password::placeholder {
-    color: #333;
+    color: #b5b5b5;
 }
 
 #dob {
