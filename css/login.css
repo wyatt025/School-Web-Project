@@ -29,6 +29,9 @@
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
 }
+#email::placeholder, #password::placeholder {
+    color: #b5b5b5;
+}
 
 #loginBtn {
     border: .2em solid transparent;
