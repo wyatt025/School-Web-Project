@@ -266,6 +266,15 @@ body {
     border: .1em solid #686868;
     border-radius: 5px;
 }
+.form-input:hover {
+    transition: 0.2s;
+    border: .1em solid transparent;
+    background: 
+    linear-gradient(to right, #2b2b2b, #2b2b2b),
+    linear-gradient(to right, #5b65a7, #2b2b2b, #f0a3d2);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
 .form-input:focus {
     outline: none;
     transition: 0.2s;
@@ -288,6 +297,15 @@ body {
     color: white;
     border: .1em solid #686868;
     border-radius: 5px;
+}
+#input-gender:hover {
+    transition: 0.2s;
+    border: .1em solid transparent;
+    background: 
+    linear-gradient(to right, #2b2b2b, #2b2b2b),
+    linear-gradient(to right, #5b65a7, #2b2b2b, #f0a3d2);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
 }
 .option-select{
     background-color:#2a2a2a;
